@@ -1,5 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { PrismaService } from 'src/prisma/prisma.service';
+import { CreateDungeonDto } from './create-dungeon.dto';
 
 @Injectable()
 export class DungeonsService {
@@ -28,5 +29,31 @@ export class DungeonsService {
             },
         });
     }
+
+    async createDungeon(createDungeonDto: CreateDungeonDto) {
+        
+        const game = await this.prismaService.games.findUnique({
+            where: {id: createDungeonDto.game_id },
+        });
+
+        if(!game) throw new Error('Game nicht gefunden');
+
+        const count = await this.prismaService.dungeons.count({
+            where: { game_id: createDungeonDto.game_id},
+        });
+
+        if(count >= game.max_dungeons) {
+            throw new Error(
+                'Maximale Anzahl an Dungeons (${game.max_dungeons}) für dieses Spiel erreicht.'
+            );
+        }
+
+        return this.prismaService.dungeons.create({
+            data: createDungeonDto,
+        });
+
+    }
+
+
 
 }
