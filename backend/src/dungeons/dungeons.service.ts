@@ -18,6 +18,17 @@ export class DungeonsService {
         });
     }
 
+    findByName(name: string) {
+        return this.prismaService.dungeons.findMany({
+            where: {
+                name: {
+                    contains: name,
+                    mode: 'insensitive',
+                },
+            },
+        });
+    }
+
     findDungeonById(id: number) {
         return this.prismaService.dungeons.findUnique({
             where: { id },
@@ -26,6 +37,23 @@ export class DungeonsService {
                 dungeon_items: {
                     include: { items: true},
                 },
+            },
+        });
+    }
+
+    findByBossName(bossName: string) {
+        return this.prismaService.dungeons.findMany({
+            where: { boss: bossName},
+        });
+    }
+
+    findFiltered(filters: { game_id?: number; boss?: string; name?: string}) {
+        
+        return this.prismaService.dungeons.findMany({
+            where: {
+                game_id: filters.game_id,
+                boss: filters.boss,
+                name: filters.name,
             },
         });
     }
