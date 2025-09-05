@@ -1,0 +1,15 @@
+{
+
+  "name": "zelda-dungeon-app",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "concurrently \"npm run dev:api\" \"npm run dev:web\"",
+    "dev:api": "cd backend && npm run start:dev",
+    "dev:web": "cd frontend && npm run dev"
+  },
+
+  "dependencies": {
+    "concurrently": "^9.2.1"
+  }
+}
