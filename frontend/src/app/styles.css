@@ -13,6 +13,7 @@
     gap: 20px;
     margin-top: 40px;
     justify-content: center;
+    flex-wrap: wrap;
 }
 
 .game-card {
@@ -35,4 +36,74 @@
 .game-card:hover {
     transform: scale(1.05);
     box-shadow:  0 8px 12px rgba(0,0,0,0.4);
+}
+
+.navbar-button {
+    font-size: 24px;
+    position: fixed;
+    top: 8px;
+    left: 8px;
+    z-index: 1000;
+    background: gold;
+    border:1px solid;
+    color:white;
+    cursor:pointer;
+}
+
+.navbar-button:hover {
+    background-color: rgb(237, 225, 153);
+}
+
+.sidebar {
+    position:fixed;
+    top:0;
+    left: -180px;
+    width: 180px;
+    height: 100vh;
+    background-color: #455e0b;
+    color: white;
+    padding: 20px;
+    transition: left 0.3s ease;
+    pointer-events: none;
+
+}
+
+.sidebar.open {
+    left: 0;
+    pointer-events: auto;
+}
+
+.sidebar h2 {
+    margin-left: 40px;
+    margin-top: 0;
+    margin-bottom: 20px;
+    color:white;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin: 15px 0;
+}
+
+.sidebar ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 8px 12px;
+    display: block;
+    border-radius: 5px;
+    transition: background 0.2s ease;
+}
+
+.sidebar ul li a:hover {
+    background-color: #698e12;
+}
+
+.main-content {
+    transition: margin-left 0.3s ease;
+    margin-left: 0;
+    padding: 20px;
 }

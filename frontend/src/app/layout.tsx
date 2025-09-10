@@ -18,42 +18,29 @@ export default function RootLayout({
 
           {/* Navbar / Icon */}
           <div style={{position: "fixed", top: 10, left: 10, zIndex: 1000}}>
-            <button onClick={toggleSideBar} style={{fontSize: "24px"}}>
+            <button className="navbar-button" onClick={toggleSideBar} style={{fontSize: "24px"}}>
               &#x2261; {/* Das ist das "=" Icon */}
             </button>
           </div>
 
           {/** Sidebar */}
-          <aside
-          style={{
-            position: "fixed",
-            top: 0,
-            left: isOpen ? 0 : "-250px",
-            width: "250px",
-            height: "100vh",
-            backgroundColor: "#222",
-            color: "white",
-            padding: "20px",
-            transition: "left 0.3s ease",
-          }}
-
-          >
+          <aside className={`sidebar ${isOpen ? "sidebar open" : "sidebar"}`}>
 
             <h2>Games</h2>
             <nav>
               <ul style={{listStyle: "none", padding: 0}}>
                 <li><Link href="/" style={{ color: "white" }}>Homepage</Link></li>
-                <li><Link href="/games/1" style={{ color: "white" }}>Ocarina of Time</Link></li>
-                <li><Link href="/games/2" style={{ color: "white" }}>Majora's Mask</Link></li>
-                <li><Link href="/games/3" style={{ color: "white" }}>The Wind Waker</Link></li>
-                <li><Link href="/games/4" style={{ color: "white" }}>Twilight Princess</Link></li>
+                <li><Link href="/games/1">Ocarina of Time</Link></li>
+                <li><Link href="/games/2">Majora's Mask</Link></li>
+                <li><Link href="/games/3">The Wind Waker</Link></li>
+                <li><Link href="/games/4">Twilight Princess</Link></li>
               </ul>
             </nav>
 
           </aside>
 
           {/** Main Content */}
-          <main style={{marginLeft: isOpen ? "250px" : "0", transition: "margin-left 0.3s ease"}}>
+          <main className="main-content" style={{marginLeft: isOpen ? "250px" : "0"}}>
             {children}
 
           </main>

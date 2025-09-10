@@ -1,0 +1,15 @@
+.game-info {
+    max-width: 800px;
+    margin: 0 auto 30px auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.game-info h2 {
+    margin-bottom: 10px;
+}
+
+.game-info p {
+    line-height: 1.6;
+    color: black;
+}
