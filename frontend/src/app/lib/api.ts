@@ -11,7 +11,9 @@ export async function getAllGames() {
 
 export async function getGameById(id: number) {
   const res = await fetch(`${API_URL}/games/${id}`);
-  return res.json();
+  const data = await res.json();
+  console.log("getGameByid data:", data);
+  return data;
 }
 
 // Dungeons
