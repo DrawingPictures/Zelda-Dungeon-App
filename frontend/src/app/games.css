@@ -7,9 +7,13 @@
 
 .game-info h2 {
     margin-bottom: 10px;
+    background-color: rgb(213, 171, 63);
+    border: 1px solid black;
 }
 
 .game-info p {
     line-height: 1.6;
     color: black;
+    background-color: darkgoldenrod;
+    border: 1px solid black;
 }

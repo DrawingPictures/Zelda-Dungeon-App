@@ -22,7 +22,7 @@ export default function DungeonPage() {
 
   useEffect(() => {
     async function fetchData() {
-      if(!gameId || !dungeonId) {
+      if (!gameId || !dungeonId) {
         return;
       }
 
@@ -35,7 +35,7 @@ export default function DungeonPage() {
 
         const allDungeons = await getDungeonsFiltered({ game_id: Number(gameId) });
         setDungeons(allDungeons);
-      } catch(error) {
+      } catch (error) {
         console.error("Fehler beim Laden der Daten:", error);
       } finally {
         setLoading(false);
@@ -45,13 +45,13 @@ export default function DungeonPage() {
     fetchData();
   }, [gameId, dungeonId]);
 
-  if(loading) return <p>Lade Daten...</p>;
+  if (loading) return <p>Lade Daten...</p>;
 
-  if(!game || !dungeon) {
+  if (!game || !dungeon) {
     return <p>Daten konnten nicht geladen werden.</p>;
   }
 
-    const bossFolderMap: Record<number, string> = {
+  const bossFolderMap: Record<number, string> = {
     1: "Ocarina_of_Time",
     2: "Majoras_Mask",
     3: "Wind_Waker",
@@ -63,16 +63,20 @@ export default function DungeonPage() {
       case "boss":
         return (
           <div>
-            <h3>{dungeon.boss}</h3>
-             <img 
-              src={`/boss/${bossFolderMap[game.id]}/${dungeon.boss}.png`} 
-              alt={dungeon.boss} 
-              />
+            <img
+              src={`/boss/${bossFolderMap[game.id]}/${dungeon.boss}.png`}
+              alt={dungeon.boss}
+            />
+            <h2>{dungeon.boss}</h2>
           </div>
         );
       case "description":
       default:
-        return <p>{dungeon.description}</p>
+        return (
+          <div className={styles.descriptionBox}>
+            <p>{dungeon.description}</p>
+          </div>
+        );
     }
   }
 
@@ -84,7 +88,7 @@ export default function DungeonPage() {
     <div className={styles.dungeonPageContainer}>
       {/** Layout: Links / Rechts */}
       <div className={styles.leftPanel}>
-        <button onClick={()=> setSelectedField("description")}>
+        <button onClick={() => setSelectedField("description")}>
           Description
         </button>
         <button onClick={() => setSelectedField("boss")}>
@@ -93,26 +97,28 @@ export default function DungeonPage() {
       </div>
 
       {/** Rechter Content */}
-      <div className={styles.content}>
-        <h2 className={styles.dungeonHeader}>
-          Dieser Dungeon heißt "{dungeon.name}" und es taucht im Spiel "{game.title}" auf.
-        </h2>
-        {renderContent()}
+      <div className={styles.rightPanel}>
+        <div className={styles.content}>
+          <h2 className={styles.dungeonHeader}>
+            Dieser Dungeon heißt "{dungeon.name}" und es taucht im Spiel "{game.title}" auf.
+          </h2>
+          {renderContent()}
+        </div>
       </div>
 
       {/** Navigation Buttons unterhalb des Layouts */}
-<div className={styles.navigationButtons}>
-  {prevDungeon && (
-    <button onClick={() => router.push(`/games/${game.id}/dungeons/${prevDungeon.id}`)}>
-      {prevDungeon.name}
-    </button>
-  )}
-  {nextDungeon && (
-    <button onClick={() => router.push(`/games/${game.id}/dungeons/${nextDungeon.id}`)}>
-      {nextDungeon.name}
-    </button>
-  )}
-</div>
+      <div className={styles.navigationButtons}>
+        {prevDungeon && (
+          <button onClick={() => router.push(`/games/${game.id}/dungeons/${prevDungeon.id}`)}>
+            {prevDungeon.name}
+          </button>
+        )}
+        {nextDungeon && (
+          <button onClick={() => router.push(`/games/${game.id}/dungeons/${nextDungeon.id}`)}>
+            {nextDungeon.name}
+          </button>
+        )}
+      </div>
     </div>
   );
 }
