@@ -34,7 +34,7 @@ export default function HomePage() {
         style={{backgroundImage: "url('/majoras-mask.png')"}}
         onClick={() => window.location.href= "/games/2"} //Link zu Majora's Mask
         >
-          Majora's Mask
+          Majora&apos;s Mask
         </div>
 
         <div
