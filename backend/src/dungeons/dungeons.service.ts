@@ -82,6 +82,21 @@ export class DungeonsService {
 
     }
 
+    async findItemsByDungeonId(dungeonId: number) {
+        const dungeon = await this.prismaService.dungeons.findUnique({
+            where: { id: dungeonId },
+            include: {
+                dungeon_items: {
+                    include: { items: true},
+                },
+            },
+        });
+
+        if(!dungeon) throw new Error('Dungeon nicht gefunden');
+
+        return dungeon.dungeon_items.map(di => di.items);
+    }
+
 
 
 }

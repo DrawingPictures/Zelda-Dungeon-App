@@ -13,3 +13,9 @@ export interface Game {
   title: string;
   max_dungeons: number;
 }
+
+export interface Item {
+  id: number;
+  name: string;
+  usability: string;
+}

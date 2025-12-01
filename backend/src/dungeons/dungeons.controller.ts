@@ -41,4 +41,9 @@ export class DungeonsController {
     getAllDungeons() {
         return this.dungeonsService.findAll();
     }
+
+    @Get(':id/items')
+    getDungeonItems(@Param('id') id: string) {
+        return this.dungeonsService.findItemsByDungeonId(+id);
+    }
 }

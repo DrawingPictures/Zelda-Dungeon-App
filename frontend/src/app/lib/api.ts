@@ -41,3 +41,12 @@ export async function getDungeonByBoss(boss: string) {
   const res = await fetch(`${API_URL}/dungeons/boss/${boss}`);
   return res.json();
 }
+
+export async function getItemsByDungeonId(dungeonId: number) {
+  const res = await fetch(`${API_URL}/dungeons/${dungeonId}/items`);
+  if (!res.ok) {
+    throw new Error(`Fehler beim Laden der Items für Dungeon ${dungeonId}`);
+  }
+  const data = await res.json();
+  return data;
+}
