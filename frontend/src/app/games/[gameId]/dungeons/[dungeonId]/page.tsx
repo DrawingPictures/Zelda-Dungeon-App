@@ -67,8 +67,9 @@ export default function DungeonPage() {
             <Image
               src={`/boss/${bossFolderMap[game.id]}/${dungeon.boss}.png`}
               alt={dungeon.boss}
-              fill
-              style={{objectFit: "cover"}}
+              width={400}       
+              height={300}      
+              style={{ objectFit: "contain" }}
             />
             <h2>{dungeon.boss}</h2>
           </div>

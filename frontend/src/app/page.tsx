@@ -10,7 +10,7 @@ export default function HomePage() {
 
       <h1>Willkommen auf meiner Webseite. </h1>
 
-        <p>Mein Name ist (mein Name) und dies ist mein erstes Fullstack-Projekt, bei dem ich sowohl Next.js als auch NestJS einsetze. Next.js nutze ich für die clientseitige Entwicklung, während NestJS zusammen mit Prisma und PostgreSQL für die serverseitige Entwicklung zum Einsatz kommt.</p>
+        <p>Ich bin ein sehr leidenschaftlicher Zelda-Fan und dies ist mein erstes Fullstack-Projekt, bei dem ich sowohl Next.js als auch NestJS einsetze. Next.js nutze ich für die clientseitige Entwicklung, während NestJS zusammen mit Prisma und PostgreSQL für die serverseitige Entwicklung zum Einsatz kommt.</p>
 
         <p>Die &quot;Zelda Dungeon App&quot;-Webseite liefert dem Nutzer sämtliche Informationen über Dungeons in verschiedenen Zelda-Spielen. Zunächst habe ich mich entschieden, vier 3D-Zelda-Titel zu integrieren. Sobald die Webseite vollständig funktionsfähig ist und das Styling korrekt angezeigt wird, plane ich, die Dungeons der restlichen Zelda-Spiele in pgAdmin 4 hinzuzufügen, inklusive der entsprechenden Spieltitel. Für die Testphase habe ich pro Spiel zunächst drei Dungeons in absteigender Reihenfolge ausgewählt, um die Funktionsweise der Webseite zu prüfen.</p>
 

@@ -9,7 +9,7 @@
 }
 
 #games-container,
-.dungeon.container {
+.dungeon-container {
     display: flex;
     gap: 20px;
     margin-top: 40px;
