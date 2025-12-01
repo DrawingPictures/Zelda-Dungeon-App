@@ -31,7 +31,7 @@ export default function RootLayout({
               <ul style={{listStyle: "none", padding: 0}}>
                 <li><Link href="/" style={{ color: "white" }}>Homepage</Link></li>
                 <li><Link href="/games/1">Ocarina of Time</Link></li>
-                <li><Link href="/games/2">Majora's Mask</Link></li>
+                <li><Link href="/games/2">Majora&apos;s Mask</Link></li>
                 <li><Link href="/games/3">The Wind Waker</Link></li>
                 <li><Link href="/games/4">Twilight Princess</Link></li>
               </ul>

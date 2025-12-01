@@ -6,6 +6,7 @@ import { useRouter } from "next/navigation";
 import { Game, Dungeon } from "../../../../../../types";
 import { getDungeonById, getGameById, getDungeonsFiltered } from "@/app/lib/api";
 import styles from "./dungeons.module.css";
+import Image from "next/image";
 
 export default function DungeonPage() {
   const params = useParams();
@@ -63,9 +64,11 @@ export default function DungeonPage() {
       case "boss":
         return (
           <div>
-            <img
+            <Image
               src={`/boss/${bossFolderMap[game.id]}/${dungeon.boss}.png`}
               alt={dungeon.boss}
+              fill
+              style={{objectFit: "cover"}}
             />
             <h2>{dungeon.boss}</h2>
           </div>
@@ -100,7 +103,7 @@ export default function DungeonPage() {
       <div className={styles.rightPanel}>
         <div className={styles.content}>
           <h2 className={styles.dungeonHeader}>
-            Dieser Dungeon heißt "{dungeon.name}" und es taucht im Spiel "{game.title}" auf.
+            Dieser Dungeon heißt &quot;{dungeon.name}&quot; und es taucht im Spiel &quot;{game.title}&quot; auf.
           </h2>
           {renderContent()}
         </div>
