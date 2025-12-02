@@ -13,7 +13,6 @@ export default function GamePage() {
     const params = useParams();
     const router = useRouter();
     const gameId = params?.gameId;
-    if(!gameId) return <p>Spiel-ID fehlt!</p>
 
     const [game, setGame] = useState<Game | null>(null);
     const [dungeons, setDungeons] = useState<Dungeon[]>([]);
@@ -22,8 +21,6 @@ export default function GamePage() {
     const gameIdNumber = gameId ? Number(gameId) : null;
 
     useEffect(() => {
-
-        if(!gameIdNumber) return;
 
         async function fetchData() {
             try {
