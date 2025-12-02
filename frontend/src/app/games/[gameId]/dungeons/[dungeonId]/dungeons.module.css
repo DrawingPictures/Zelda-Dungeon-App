@@ -35,11 +35,6 @@
   background-color: rgb(4, 176, 4);
 }
 
-.content img {
-  max-width: 250px;
-  display: block;
-  margin-bottom: 10px;
-}
 
 .dungeonHeader {
     margin-bottom: 20px;
@@ -47,6 +42,17 @@
     color: black;
     background-color: rgb(2, 112, 2);
     border: 1px solid black;
+}
+
+.imageBox {
+    
+    background-color: white;
+    max-width: 400px;
+    display: block;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.4);
+    margin-bottom: 10px;
 }
 
 .descriptionBox {

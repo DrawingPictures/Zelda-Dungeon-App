@@ -82,7 +82,7 @@ export default function DungeonPage() {
     switch (selectedField) {
       case "boss":
         return (
-          <div>
+          <div className={styles.imageBox}>
             <Image
               src={`/boss/${bossFolderMap[game.id]}/${dungeon.boss}.png`}
               alt={dungeon.boss}
@@ -150,8 +150,33 @@ export default function DungeonPage() {
         </div>
       </div>
 
+      {/** Navigation Buttons unterhalb des Layouts */}
+      <div className={styles.navigationButtons}>
+        {prevDungeon && (
+          <button onClick={() => router.push(`/games/${game.id}/dungeons/${prevDungeon.id}`)}>
+            {prevDungeon.name}
+          </button>
+        )}
+        {nextDungeon && (
+          <button onClick={() => router.push(`/games/${game.id}/dungeons/${nextDungeon.id}`)}>
+            {nextDungeon.name}
+          </button>
+        )}
+      </div>
+
       {/** Game-Card */}
-      <div id="games-container">
+      <div 
+      id="games-container"
+      style={{
+        gridColumn: "1 / 3",
+        display: "flex",
+        justifyContent: "center",
+        flexWrap: "wrap",
+        gap: "20px",
+        width: "100%",
+        padding: "10px",
+        boxSizing: "border-box",
+      }}>
         <div
           className="game-card"
           style={{ backgroundImage: "url('/ocarina-of-time.png')" }}
@@ -186,19 +211,6 @@ export default function DungeonPage() {
 
     </div>
 
-      {/** Navigation Buttons unterhalb des Layouts */}
-      <div className={styles.navigationButtons}>
-        {prevDungeon && (
-          <button onClick={() => router.push(`/games/${game.id}/dungeons/${prevDungeon.id}`)}>
-            {prevDungeon.name}
-          </button>
-        )}
-        {nextDungeon && (
-          <button onClick={() => router.push(`/games/${game.id}/dungeons/${nextDungeon.id}`)}>
-            {nextDungeon.name}
-          </button>
-        )}
-      </div>
     </div>
   );
 }

@@ -11,8 +11,6 @@ export default function RootLayout({
 }>) {
 
     const [isOpen, setIsOpen] = useState(false);
-
-    const toggleSideBar = () => setIsOpen(!isOpen);
     return (
    <div className="game-layout">
       {/* Navbar Button */}
@@ -29,7 +27,7 @@ export default function RootLayout({
           <ul>
             <li><Link href="/">Homepage</Link></li>
             <li><Link href="/games/1">Ocarina of Time</Link></li>
-            <li><Link href="/games/2">Majora's Mask</Link></li>
+            <li><Link href="/games/2">Majora&apos;s Mask</Link></li>
             <li><Link href="/games/3">The Wind Waker</Link></li>
             <li><Link href="/games/4">Twilight Princess</Link></li>
           </ul>
