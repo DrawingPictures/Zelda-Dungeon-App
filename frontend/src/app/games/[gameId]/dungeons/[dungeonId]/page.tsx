@@ -164,52 +164,40 @@ export default function DungeonPage() {
         )}
       </div>
 
-      {/** Game-Card */}
-      <div 
-      id="games-container"
-      style={{
-        gridColumn: "1 / 3",
-        display: "flex",
-        justifyContent: "center",
-        flexWrap: "wrap",
-        gap: "20px",
-        width: "100%",
-        padding: "10px",
-        boxSizing: "border-box",
-      }}>
+      {/** Game-Cards ganz unten */}
+      <div className={styles.gamesFooter}>
         <div
           className="game-card"
           style={{ backgroundImage: "url('/ocarina-of-time.png')" }}
-          onClick={() => window.location.href = "/games/1"} //Link zu Ocarina of Time
-          >
-            Ocarina of Time
+          onClick={() => window.location.href = "/games/1"}
+        >
+          Ocarina of Time
         </div>
 
         <div
-        className="game-card"
-        style={{backgroundImage: "url('/majoras-mask.png')"}}
-        onClick={() => window.location.href= "/games/2"} //Link zu Majora's Mask
+          className="game-card"
+          style={{ backgroundImage: "url('/majoras-mask.png')" }}
+          onClick={() => window.location.href = "/games/2"}
         >
           Majora&apos;s Mask
         </div>
 
         <div
-        className="game-card"
-        style={{backgroundImage: "url('/the-wind-waker.png')"}}
-        onClick={() => window.location.href="/games/3"} //Link zu The Wind Waker
+          className="game-card"
+          style={{ backgroundImage: "url('/the-wind-waker.png')" }}
+          onClick={() => window.location.href = "/games/3"}
         >
           The Wind Waker
         </div>
 
         <div
-        className="game-card"
-        style={{backgroundImage: "url('/twilight-princess.png')"}}
-        onClick={() => window.location.href="/games/4"} //Link zu Twilight Princess
+          className="game-card"
+          style={{ backgroundImage: "url('/twilight-princess.png')" }}
+          onClick={() => window.location.href = "/games/4"}
         >
           Twilight Princess
         </div>
-
-    </div>
+      </div>
 
     </div>
   );
