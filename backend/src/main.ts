@@ -8,8 +8,11 @@ async function bootstrap() {
     origin: [
       "http://localhost:3000",
       "http://192.168.56.1:3000",
-      "https://zeldadungeonapp.vercel.app"
+      "https://zeldadungeonapp.vercel.app",
+      // Erlaubt auch die automatischen Preview-URLs von Vercel (Regex):
+      /\.vercel\.app$/
       ],
+    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
     credentials: true,
   });
 
